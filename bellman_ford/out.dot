@@ -1,0 +1,14 @@
+digraph G {
+	a->c[ label=-2 ];
+	c->d[ label=21 ];
+	d->e[ label=11 ];
+	e->f[ label=12 ];
+	f->i[ label=15 ];
+	a;
+	c;
+	d;
+	e;
+	f;
+	i;
+
+}

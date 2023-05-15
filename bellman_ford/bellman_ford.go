@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	gengraph "github.com/WolvenSpirit/graph/gen-graph"
+)
 
 const DefaultWeight = 1_000_000_000 // MAX WEIGHT
 
@@ -20,11 +24,7 @@ var e = [][]int{
 	{5, 8, 15}, // f -> i
 }
 
-type V struct {
-	Name     string
-	Index    int
-	Distance int
-}
+type V = gengraph.V
 
 type M map[string]V
 
@@ -98,5 +98,5 @@ func main() {
 		fmt.Printf("[Index: %d][Name: %s]<Distance: %d> ->\n", v.Index, v.Name, hopDistance)
 	}
 	fmt.Println("Total distance ", totalDistance)
-	fmt.Println(store)
+	fmt.Println(gengraph.GenGraphToFile(out, "out.dot"))
 }
